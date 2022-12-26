@@ -5,6 +5,8 @@ TextStyle retroStyle(double size, Color color, FontWeight fw) {
       fontFamily: "RetroGaming", color: color, fontSize: size, fontWeight: fw);
 }
 
+List wordslist = ['FLUTTER', 'PROGRAMMING', 'PYTHON', 'GOOGLE'];
+
 List<String> letters = [
   'A',
   'B',

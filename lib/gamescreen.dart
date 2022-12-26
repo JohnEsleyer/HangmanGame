@@ -28,6 +28,7 @@ class _GameScreenState extends State<GameScreen> {
         ],
       ),
       body: SingleChildScrollView(
+        physics: ScrollPhysics(),
         child: Container(
           alignment: Alignment.center,
           child: Column(
@@ -53,7 +54,32 @@ class _GameScreenState extends State<GameScreen> {
               ),
               SizedBox(height: 15),
               Text("7 lives left",
-                  style: retroStyle(15, Colors.grey, FontWeight.w700))
+                  style: retroStyle(15, Colors.white, FontWeight.w700)),
+              SizedBox(height: 30),
+              Text(
+                "????????",
+                style: retroStyle(35, Colors.white, FontWeight.w700),
+                textAlign: TextAlign.center,
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              GridView.count(
+                crossAxisCount: 7,
+                shrinkWrap: true,
+                padding: EdgeInsets.only(left: 10),
+                childAspectRatio: 1.3,
+                physics: NeverScrollableScrollPhysics(),
+                children: letters.map((alphabet) {
+                  return InkWell(
+                    onTap: () => print("Tapped"),
+                    child: Center(
+                      child: Text(alphabet,
+                          style: retroStyle(20, Colors.white, FontWeight.w700)),
+                    ),
+                  );
+                }).toList(),
+              )
             ],
           ),
         ),
